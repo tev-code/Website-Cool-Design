@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Red+Hat+Mono:wght@300&display=swap');
 
 :root{
     --main-color: #fef900;
@@ -9,7 +8,7 @@
 }
 
 *{
-   font-family: 'Poppins', sans-serif;
+   font-family: 'Red Hat Mono', monospace;
    margin: 0;
    box-sizing: border-box;
    outline: none;
@@ -42,8 +41,20 @@ body{
     background: var(--bg);
 }
 
+h1{
+    font-family: 'Poppins', sans-serif;
+}
+
+h3{
+    font-family: 'Poppins', sans-serif;
+}
+
 section{
     padding: 2rem 7%;
+}
+
+img{
+    border-radius: 30px;
 }
 
 .heading{
@@ -107,11 +118,12 @@ section{
     background: var(--main-color);
     cursor: pointer;
     border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .btn:hover{
-    color: #fff;
-    background: var(--black);
+    color: whitesmoke;
+    background: var(--bg);
 }
 
 #menu-btn{
@@ -122,10 +134,23 @@ section{
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background:linear-gradient(rgba(58, 58, 58, 0.7),rgba(36, 35, 35, 0.75)), url(../images/cover.jpg) no-repeat;
     background-size: cover;
-    background-position: center;
-    opacity: 0.75;
+    animation: animate 16s ease-in-out infinite;
+}
+
+@keyframes animate{
+    0%,100%{
+         background:linear-gradient(rgba(58, 58, 58, 0.7),rgba(36, 35, 35, 0.75)), url(../images/cover.jpg) no-repeat;
+    }
+    25%{
+         background:linear-gradient(rgba(58, 58, 58, 0.7),rgba(36, 35, 35, 0.75)), url(../images/blog.png) no-repeat;
+    }
+    50%{
+         background:linear-gradient(rgba(58, 58, 58, 0.7),rgba(36, 35, 35, 0.75)), url(../images/item2.jpg) no-repeat;
+    }
+    75%{
+         background:linear-gradient(rgba(58, 58, 58, 0.7),rgba(36, 35, 35, 0.75)), url(../images/limit1.jpg) no-repeat;
+    }
 }
 
 .home .content{
@@ -152,6 +177,7 @@ section{
     align-items: center;
     background: var(--black);
     flex-wrap: wrap;
+    border-radius: 50px;
 }
 
 .about .row .image{
