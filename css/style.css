@@ -53,9 +53,7 @@ section{
     padding: 2rem 7%;
 }
 
-img{
-    border-radius: 30px;
-}
+
 
 .heading{
     text-align: center;
@@ -135,7 +133,7 @@ img{
     display: flex;
     align-items: center;
     background-size: cover;
-    animation: animate 16s ease-in-out infinite;
+    animation: animate 17s ease-in-out infinite;
 }
 
 @keyframes animate{
@@ -212,9 +210,9 @@ img{
 }
 
 .winter .box-container .box{
-    padding: 5rem;
     text-align: center;
     border: var(--border);
+    padding: 2rem;
 }
 
 .winter .box .box img{
@@ -231,6 +229,10 @@ img{
     color: whitesmoke;
     font-size: 2.5rem;
     padding: 5rem 0;
+}
+
+.winter .box-container .box .image{
+    padding: 2.5rem 0;
 }
 
 .winter .box-container .box .price span{
@@ -460,6 +462,7 @@ i{
         position: absolute;
         top:100%; right: -100%;
         background: var(--black);
+        opacity: .9;
         width: 30rem;
         height: calc(100vh - 9.5rem);
     }
@@ -498,5 +501,6 @@ i{
     html{
         font-size: 50%;
     }
+
 
 }
