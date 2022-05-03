@@ -20,6 +20,6 @@ const sr = ScrollReveal({
     reset: true
 });
 
-sr.reveal(`.home, .about, .winter, .video, .contact, .blogs`, {
-    interval: 100
+sr.reveal(`.home, .about, .winter, .blogs`, {
+    interval: 50
 })
