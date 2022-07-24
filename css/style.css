@@ -1,11 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Red+Hat+Mono:wght@300&display=swap');
-
 :root{
     --main-color: #fef900;
-    --black: #13131a;
+    --black: #161616;
     --bg: #010103;
     --border: .1rem solid rgba(255,255,255,.3);
-}
+   }
 
 *{
    font-family: 'Poppins', sans-serif;
@@ -38,7 +36,7 @@ html::-webkit-scrollbar-thumb{
 }
 
 body{
-    background: var(--bg);
+    background: var(--black);
 }
 
 h1{
@@ -149,11 +147,12 @@ section{
 .home .content h3{
     font-size: 6rem;
     color: #fff;
-    font-weight: 900;
+    font-weight: 1000;
 }
 
 .home .content span{
     color: #fef900;
+    font-weight: bolder;
 }
 
 .home .content p{
@@ -164,10 +163,13 @@ section{
     color: #fff;
 }
 
+.about {
+    background-color: var(--bg);
+}
+
 .about .row{
     display: flex;
     align-items: center;
-    background: var(--black);
     flex-wrap: wrap;
     border-radius: 50px;
 }
@@ -204,13 +206,32 @@ section{
 .winter .box-container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-    gap: 1.5rem;
+    gap: 1.2rem;
 }
+
 
 .winter .box-container .box{
     text-align: center;
-    border: var(--border);
     padding: 2rem;
+    border: var(--border);
+}
+
+.winter .box-limited .box{
+    text-align: center;
+    padding: 2rem;
+    border: var(--border);
+}
+
+.winter .box-limited .box h3{
+    font-size: 2.5rem;
+    color: whitesmoke;
+}
+
+.winter .box-limited .box h2{
+    color: whitesmoke;
+    font-size: 2.5rem;
+    padding: 10px 0;
+    font-weight: lighter;
 }
 
 .winter .box .box img{
@@ -219,14 +240,15 @@ section{
 
 .winter .box-container .box h3{
     color: whitesmoke;
-    font-size: 2rem;
+    font-size: 2.5rem;
     padding: 1rem 0;
 }
 
-.winter .box-container .box .price{
+.winter .box-container .box h2{
     color: whitesmoke;
     font-size: 2.5rem;
-    padding: 5rem 0;
+    padding: 1rem 0;
+    font-weight: lighter;
 }
 
 .winter .box-container .box .image{
@@ -239,7 +261,21 @@ section{
     text-decoration: line-through;
 }
 
+.box-container .box{
+    position: relative;
+}
 
+.top-img{
+    position: absolute;
+    left: 0;
+    top: 1;
+    opacity: 0;
+    transition: all .7s ease;
+}
+
+.top-img:hover{
+    opacity: 1;
+}
 
 
 
@@ -269,19 +305,23 @@ section{
     font-size: 2.5rem;
 }
 
+.video {
+     background-color: var(--bg);
+}
+
 section .video-container{
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
     justify-content: center;
     padding: 10px;
+    border: var(--border);
+   
 }
 
 section .video-container .video{
     height: 800px;
-    width: 1000px;
-    border: 2px solid grey;
-    border-radius: 5px;
+    width: 100%;
     box-shadow: 0 5px 15px rgba(0, 0, 0, .7);
     cursor: pointer;
     overflow: hidden;
@@ -298,6 +338,14 @@ section .video-container .video:hover video{
     transform: scale(1.1);
 }
 
+.contact{
+    background-color: var(--bg);
+     
+}
+
+.contact span {
+    color: #fef900;
+}
 
 .contact .row{
     display: flex;
@@ -355,10 +403,15 @@ i{
     padding-right: 20px;
 }
 
+.blogs {
+     background: var(--bg);
+}
+
 .blogs .box-container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     gap: 1.5rem;
+  
 }
 
 .blogs .box-container .box{
@@ -547,6 +600,11 @@ i{
          display: flex;
          align-items: center;
          background-size: cover;
+    }
+
+    .product_img, .top-img{
+        width: 300px;
+        height: 300px;
     }
 
    

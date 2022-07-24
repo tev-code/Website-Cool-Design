@@ -16,10 +16,10 @@ window.onscroll = () =>{
 const sr = ScrollReveal({
     origin: 'top',
     distance: '30px',
-    duration: 2000,
+    duration: 1000,
     reset: true
 });
 
-sr.reveal(`.home, .about, .winter, .blogs`, {
+sr.reveal(`.home, .about`, {
     interval: 50
 })

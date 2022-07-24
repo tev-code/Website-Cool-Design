@@ -15,42 +15,78 @@
 
  
  <div class="container">
-      <a href="index.html"><h4>Back</h4></a>
-     <div class="image-container">
-           
-         <div class="image animate__animated animate__pulse"><img  src="images/Cover1.jpg" alt=""></div>
-         <div class="image animate__animated animate__pulse"><img  src="images/Cover2.jpg" alt=""></div>
-         <div class="image animate__animated animate__pulse "><img  src="images/Cover3.jpg" alt=""></div>
-         <div class="image animate__animated animate__pulse"><img  src="images/Cover4.jpg" alt=""></div>
-         <div class="image animate__animated animate__pulse"><img  src="images/Cover5.jpg" alt=""></div>
-         <div class="image animate__animated animate__pulse "><img  src="images/ghoodie.jpg" alt=""></div>
-         <div class="image animate__animated animate__pulse"><img  src="images/cover6.jpg" alt=""></div>
-         <div class="image animate__animated animate__pulse"><img  src="images/cover7.jpg" alt=""></div>
-         <div class="image animate__animated animate__pulse "><img  src="images/cover8.jpg" alt=""></div>
-         <div class="image animate__animated animate__pulse "><img  src="images/cover9.jpg" alt=""></div>
-         <div class="image animate__animated animate__pulse"><img  src="images/cover10.jpg" alt=""></div>
-         <div class="image animate__animated animate__pulse "><img  src="images/cover11.jpg" alt=""></div>
-         <div class="image animate__animated animate__pulse"><img  src="images/cover12.jpg" alt=""></div>
-         <div class="image animate__animated animate__pulse"><img  src="images/cover13.jpg" alt=""></div>
-         <div class="image animate__animated animate__pulse"><img  src="images/cover14.jpg" alt=""></div>        
-     </div>
-     <div class="popup-image">
-         <span>&times;</span>
-         <img src="images/Cover1.jpg" alt="" height="900px" width="600px">
+      <a href="index.html"><h4> <div class='bx bx-store'></div></h4></a>
+      <div class="carousal-slide">
+      <img src="images/Cover1.jpg" id="lastClone" alt="cover 1">
+      <img src="images/Cover1.jpg" alt="cover 1">
+      <img src="images/Cover1.jpg" alt="cover 1">
+      <img src="images/Cover1.jpg" alt="cover 1">
+      <img src="images/Cover1.jpg" alt="cover 1">
+      <img src="images/Cover1.jpg" alt="cover 1">
+      <img src="images/Cover1.jpg" id="firstClone" alt="cover 1">
      </div>
      </div>
+     <button id="prevBtn">Prev</button>
+     <button id="nextBtn">Next</button>
+
+      <section class="footer">
+        <div class="share">
+        <a href="#" class="fab fa-facebook-f"></a>
+        <a href="#" class="fab fa-twitter"></a>
+        <a href="#" class="fab fa-instagram"></a>
+        </div>
+
+        <div class="links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#winter">Winter</a>
+            <a href="#summer">Summer</a>
+            <a href="#video">Ads</a>
+            <a href="#products">Limited</a>
+            <a href="#contact">Contact</a>
+            <a href="#blogs">Blogs</a>    
+        </div>
+
+        <div class="credit">created by <span>Scruffy Clean</span> | all rights reserved</div>
+    </section>
 
      <script>
-         document.querySelectorAll('.image-container img').forEach(image =>{
-            image.onclick = () => {
-                document.querySelector('.popup-image').style.display = 'block';
-                document.querySelector('.popup-image img').src = image.getAttribute('src');
-            }
-         });
+       const carousalSlide = document.querySelector('.carousal-slide');
+       const carousalImages = document.querySelectorAll('.carousal-slide img');
 
-         document.querySelector('.popup-image span').onclick = () =>{
-             document.querySelector('.popup-image').style.display = 'none';
-         }
+       // Buttons
+       const prevBtn = document.querySelector('#prevBtn');
+       const nextBtn = document.querySelector('#nextBtn');
+
+       // Counter
+       let counter = 1;
+       const size = carousalImages[0].clientWidth;
+
+       carousalSlide.style.transfrom = 'translateX(' + (-size * counter) + 'px)';
+
+       // Button listeners
+       nextBtn.addEventListener('click', () => {
+        //if (counter <= 0) return;
+        carousalSlide.style.transition = "transform 0.4s ease-in-out";
+        counter++;
+        carousalSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+
+       });
+
+         prevBtn.addEventListener('click', () => {
+        carousalSlide.style.transition = "transform 0.4s ease-in-out";
+        counter--;
+        carousalSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+        
+       });
+
+       carousalSlide.addEventListener('transitioned', () => {
+        if (carousalImages[counter].id === 'lastClone') {
+            carousalSlide.style.transition = "none";
+        }
+       });
+
+
      </script>
  
  
